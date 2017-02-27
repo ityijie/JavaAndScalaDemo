@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!--head元素: mate,title,link,style,script,base(不怎么用)-->
+
+<!--使用CSS的三种方法-->
+<!--
+    1.内联样式,Html元素中使用Style标签
+    2.内部样式表,在Html文档头部<head>区域使用<style>元素来包含CSS
+    3.外部应用,使用外部CSS文件
+-->
+
+<!--HTML可被定义块元素,内联元素,区块-->
+<!--
+    1.块元素:块级元素在浏览器显示时，通常会以新行来开始（和结束）。(<h1></h1>)
+    2.内联元素:内联元素在显示时通常不会以新行开始。(<a>)
+    3.区块(div span),组合块元素和内联元素,
+    如:
+    --div(span)
+        <h1></h1>
+        <a><img>
+    --div(span)
+-->
+
+<head>
+
+    <!--mate 描述基本信息,提供给浏览器解析-->
+    <meta charset="UTF-8">
+    <!--为搜索定义关键字,-->
+    <meta name="keywords" content="HTML,CSS">
+    <!--为网页定义描述内容-->
+    <meta name="description" content="this is html for test">
+    <!--为网页定义作者-->
+    <meta name="author" content="tester">
+    <!--为网页定义刷新时间-->
+    <meta http-equiv="refresh" content="30">
+
+    <!--title 定义浏览器标题-->
+    <title>Title</title>
+
+    <!--link 定义文档与外部资源之间的关系-->
+    <!-- 3.外部应用,使用外部CSS文件-->
+    <link rel="stylesheet" type="text/css" href="mystyle.css"><!---->
+
+    <!--style  标签定义了HTML文档的样式文件引用地址.背景白色,字体蓝色-->
+    <!--2.内部样式表,在Html文档头部<head>区域使用<style>元素来包含CSS-->
+    <style type="text/css">body {background-color:white} p {color:blue}</style>
+    <style>
+myHero {
+    display: block;
+    background-color: #ddd;
+    padding: 50px;
+    font-size: 30px;
+}
+</style>
+
+
+</head>
+
+<body>
+<!--body元素:-->
+
+<!--h1到h6-->
+<!-- 1.内联样式,Html元素中使用Style标签-->
+<h1 id="TitleId1" class="ClassOne" style="color:blue;" title="">标题1</h1>
+<h2 id="TitleId2" class="ClassTwo" style="" title="">标题2</h2>
+
+<!--a 链接标签-->
+<a href="http://www.baidu.com">链接</a><br>
+<a href="http://www.baidu.com" target="_blank">新页面打开</a><br>
+
+<!--img 图片标签,alt丢失提示文本-->
+<img src="http://www.w3school.com.cn/i/eg_chinarose.jpg" width="104" height="142">
+<img src="http://www.w3" width="104" height="142" alt="丢失">
+
+<p>段落</p>
+<!--hr定义水平线-->
+<hr>
+
+<!--p定义段落-->
+<p>另一个段落</p>
+
+<!--br换行-->
+<br>
+
+<!--文本格式化字体-->
+<b>加粗文本</b><br><br>
+<i>斜体文本</i><br><br>
+<del>删除字</del><br>
+<code>电脑自动输出</code><br>
+这是 <sub> 下标</sub> 和 <sup> 上标</sup>
+
+
+<!--表格-->
+<!--table:定义表格,th:表格表头,tr:行,td:表格单元,-->
+<br>
+<table border="1">
+    <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+    </tr>
+    <tr>
+        <td>row 1, cell 1</td>
+        <td>row 1, cell 2</td>
+    </tr>
+    <tr>
+        <td>row 2, cell 1</td>
+        <td>row 2, cell 2</td>
+    </tr>
+</table>
+<!--有序无序列表-->
+<!--ul 无序,  ol 有序 , dl 自定义-->
+<!--li 定义列表项 ,     dt 自定义列表项目 ,dd 定义自定义表项,-->
+<ul>
+    <li>Coffee</li>
+    <li>Milk</li>
+</ul>
+
+<ol>
+    <li>Coffee</li>
+    <li>Milk</li>
+</ol>
+
+<dl>
+    <dt>Coffee</dt>
+    <dd>- black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>- white cold drink</dd>
+</dl>
+
+<!---->
+<!--区块-->
+<!---->
+<div id="container" style="width:500px">
+
+    <div id="header" style="background-color:#FFA500;">
+        <h1 style="margin-bottom:0;">主要的网页标题</h1>
+    </div>
+
+    <div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left;">
+        <b>菜单</b><br>
+        HTML<br>
+        CSS<br>
+        JavaScript
+    </div>
+
+    <div id="content" style="background-color:#EEEEEE;height:200px;width:400px;float:left;">
+        内容在这里
+    </div>
+
+    <div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+        版权
+    </div>
+
+</div>
+
+<!--表单-->
+<!--action 提交地址-->
+<form name="input" action="html_form_action.php" method="get">
+    <!--input,输入元素,text文本,password密码,radiobuttons单选(name属性要必须一样),CheckBoxes多选,select下拉-->
+    ID  <input type="text" name="id"><br>
+    PW   <input type="PASSWORD" name="pw"><br>
+    sex   :<input type="radio" name="sex" value="male">male
+           <input type="radio" name="sex" value="female">female<br>
+    love:<input type="checkbox" name="love" value="apple">apple
+            <input type="checkbox" name="love" value="Apple">Apple<br>
+    <select name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+    </select><br>
+    <!--selected,预选值-->
+    <select name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat" selected>Fiat</option>
+        <option value="audi">Audi</option>
+    </select><br>
+    <input type="submit" value="Submit">
+</form>
+
+<!--iframe 框架,frameborder=0移除边框-->
+<!--打开一个框架,查看页面-->
+<iframe src="demo_iframe.htm" width="200" height="200" frameborder="0"></iframe><br>
+<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
+<p><a href="http://www.runoob.com" target="iframe_a">RUNOOB.COM</a></p>
+
+
+
+
+<!--script脚本-->
+<!--noscript,检查浏览器是否支持js,否则,提示下列语句-->
+<!--脚本可放在head和body中-->
+<noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+<script>
+document.write("Hello World!");
+</script> <br>
+<!--JavaScript可以直接在HTML输出:-->
+<script>
+document.write("<h1>这是一个标题</h1>");
+document.write("<p>这是一个段落。</p>");
+</script>
+<!--JavaScript事件响应:-->
+<p id="demo1">这是一个demo</p>
+<script>
+        function displayDate(){
+            document.getElementById("demo1").innerHTML=Date();
+        }
+    </script>
+<button type="button" onclick="displayDate()">显示日期</button>
+<!--JavaScript处理 HTML 样式:-->
+<p id="demo2">
+    JavaScript 能改变 HTML 元素的样式。
+</p>
+<script>
+function myFunction()
+{
+	x=document.getElementById("demo2") // 找到元素
+	x.style.color="#ff0000";          // 改变样式
+}
+</script>
+<button type="button" onclick="myFunction()">点击这里</button>
+<br>
+
+
+
+<!--字符实体:在 HTML 中不能使用小于号（<）和大于号（>），这是因为浏览器会误认为它们是标签-->
+<!--详情等用到细查-->
+&nbsp;&lt;&gt;
+
+<br>
+
+
+
+<!--Html5新元素-->
+<!--
+用于绘画的 canvas 元素
+用于媒介回放的 video 和 audio 元素对本地离线存储的更好的支持
+新的特殊内容元素，比如 article、footer、header、nav、section
+新的表单控件，比如 calendar、date、time、email、url、search
+-->
+
+<!--canvas 需要另外学,知道这么一回事-->
+<!--canvas 图形标签,也可以用脚本绘制-->
+<!--使用 JavaScript 来绘制图像-->
+<!--
+设置fillStyle属性可以是CSS颜色，渐变，或图案。
+fillStyle 默认设置是#000000（黑色）。
+fillRect(x,y,width,height) 方法定义了矩形当前的填充方式。
+-->
+<!--绘制矩形-->
+<canvas id="myCanvas0" width="200" height="100"
+        style="border:1px solid #000000;">
+</canvas><br>
+<script>
+var c=document.getElementById("myCanvas0");
+var ctx=c.getContext("2d");
+ctx.fillStyle="#FF0000";
+ctx.fillRect(0,0,150,75);
+</script>
+<!--绘制斜线-->
+<canvas id="myCanvas1" width="200" height="100"
+        style="border:1px solid #000000;">
+</canvas><br>
+<script>
+var c=document.getElementById("myCanvas1");
+var ctx=c.getContext("2d");
+ctx.moveTo(0,0);
+ctx.lineTo(200,100);
+ctx.stroke();
+</script>
+<!--绘制圆圈-->
+<canvas id="myCanvas2" width="200" height="100"
+        style="border:1px solid #000000;">
+</canvas><br>
+<script>
+var c=document.getElementById("myCanvas2");
+var ctx=c.getContext("2d");
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+</script>
+<!--绘制文本-->
+<canvas id="myCanvas3" width="200" height="100"
+        style="border:1px solid #000000;">
+</canvas><br>
+<script>
+var c=document.getElementById("myCanvas3");
+var ctx=c.getContext("2d");
+ctx.font="30px Arial";
+ctx.fillText("Hello World",10,50);
+</script>
+
+<!--绘制图案-->
+<canvas id="myCanvas4" width="200" height="100"
+        style="border:1px solid #000000;">
+</canvas><br>
+<script>
+var c=document.getElementById("myCanvas4");
+var ctx=c.getContext("2d");
+
+// Create gradient
+var grd=ctx.createRadialGradient(75,50,5,90,60,100);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle=grd;
+ctx.fillRect(10,10,150,80);
+
+</script>
+<!--直接绘图-->
+<canvas id="myCanvas" width="250" height="300" style="border:1px solid #d3d3d3;">
+    您的浏览器不支持 HTML5 canvas 标签。</canvas>
+<script>
+
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+var img=document.getElementById("scream");
+
+img.onload = function() {
+	ctx.drawImage(img,10,10);
+}
+</script>
+
+<br>
+<!--SVG  需要另外学,知道这么一回事
+SVG 指可伸缩矢量图形 (Scalable Vector Graphics)
+SVG 用于定义用于网络的基于矢量的图形
+SVG 使用 XML 格式定义图形
+SVG 图像在放大或改变尺寸的情况下其图形质量不会有损失
+SVG 是万维网联盟的标准
+-->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+    <polygon points="100,10 40,180 190,60 10,60 160,180"
+             style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"/>
+</svg>
+
+
+
+<!--MathML 数学运算,不重要,只有这么一回事-->
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+
+    <mrow>
+        <msup><mi>a</mi><mn>2</mn></msup>
+        <mo>+</mo>
+
+        <msup><mi>b</mi><mn>2</mn></msup>
+        <mo>=</mo>
+
+        <msup><mi>c</mi><mn>2</mn></msup>
+    </mrow>
+
+</math>
+
+<!--video 视频标签-->
+<br>
+<video width="320" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    您的浏览器不支持Video标签。
+</video>
+
+<!--音频标签-->
+<br>
+<audio controls>
+    <source src="horse.ogg" type="audio/ogg">
+    您的浏览器不支持 audio 元素。
+</audio>
+
+<!--数据的本地存储-->
+<div style="border: 2px dashed #ccc;width:320px;text-align:center;">
+    <label for="keyname">别名(key):</label>
+    <input type="text" id="keyname" name="keyname" class="text"/>
+    <br/>
+    <label for="sitename">网站名：</label>
+    <input type="text" id="sitename" name="sitename" class="text"/>
+    <br/>
+    <label for="siteurl">网 址：</label>
+    <input type="text" id="siteurl" name="siteurl"/>
+    <br/>
+    <input type="button" onclick="save()" value="新增记录"/>
+    <hr/>
+    <label >输入别名(key)：</label>
+    <input type="text" id="search_site" name="search_site"/>
+    <input type="button" onclick="find()" value="查找网站"/>
+    <p id="find_result"><br/></p>
+</div>
+<br/>
+<div id="list">
+</div>
+<script>
+    //保存数据
+    function save(){
+        var site = new Object;
+        site.keyname = document.getElementById("keyname").value;
+        site.sitename = document.getElementById("sitename").value;
+        site.siteurl = document.getElementById("siteurl").value;
+        var str = JSON.stringify(site); // 将对象转换为字符串
+        localStorage.setItem(site.keyname,str);
+        alert("保存成功");
+    }
+    //查找数据
+    function find(){
+        var search_site = document.getElementById("search_site").value;
+        var str = localStorage.getItem(search_site);
+        var find_result = document.getElementById("find_result");
+        var site = JSON.parse(str);
+        find_result.innerHTML = search_site + "的网站名是：" + site.sitename + "，网址是：" + site.siteurl;
+    }
+
+    //将所有存储在localStorage中的对象提取出来，并展现到界面上
+	// 确保存储的 keyname 对应的值为转换对象，否则JSON.parse会报错
+    function loadAll(){
+        var list = document.getElementById("list");
+        if(localStorage.length>0){
+            var result = "<table border='1'>";
+            result += "<tr><td>别名</td><td>网站名</td><td>网址</td></tr>";
+            for(var i=0;i<localStorage.length;i++){
+                var keyname = localStorage.key(i);
+                var str = localStorage.getItem(keyname);
+                var site = JSON.parse(str);
+                result += "<tr><td>"+site.keyname+"</td><td>"+contact.sitename+"</td><td>"+contact.siteurl+"</td></tr>";
+            }
+            result += "</table>";
+            list.innerHTML = result;
+        }else{
+            list.innerHTML = "数据为空...";
+        }
+    }
+    </script>
+
+
+<!--为 HTML 添加新元素-->
+<myHero>我的第一个新元素</myHero>
+
+
+
+<!--CSS 用于控制网页的样式和布局-->
+
+
+</body>
+</html>

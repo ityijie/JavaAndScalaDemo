@@ -45,13 +45,13 @@ libraryDependencies += "javax.mail" % "mail" % "1.4.7"
 libraryDependencies += "dom4j" % "dom4j" % "1.6.1"
 
 
-
+/*
 // https://mvnrepository.com/artifact/org.apache.flume/flume-ng-core
-libraryDependencies += "org.apache.flume" % "flume-ng-sdk" % "1.6.0"
+libraryDependencies += "org.apache.flume" % "flume-ng-core" % "1.5.0"
 
 // https://mvnrepository.com/artifact/org.apache.flume.flume-ng-clients/flume-ng-log4jappender
 libraryDependencies += "org.apache.flume.flume-ng-clients" % "flume-ng-log4jappender" % "1.6.0"
-
+*/
 
 
 

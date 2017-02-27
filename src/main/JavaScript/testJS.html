@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--JS输出-->
+<!--
+使用 window.alert() 弹出警告框。
+使用 document.write() 方法将内容写到 HTML 文档中。
+使用 innerHTML 写入到 HTML 元素。
+使用 console.log() 写入到浏览器的控制台。
+-->
+<!--1.使用 window.alert() 弹出警告框。-->
+<script>
+window.alert(5 + 6);
+</script>
+
+<!--2.使用 document.write() 方法将内容写到 HTML 文档中。-->
+<b>
+<script>
+document.write(Date());
+</script>
+</b>
+
+<!--3.使用 innerHTML 写入到 HTML 元素。-->
+<p id="demo">我的第一个段落</p>
+<script>
+//查找元素.改变内容
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id : 5566,
+    fullName : function()
+	{
+       return this.firstName + " " + this.lastName;
+    }
+};
+
+//document.getElementById("demo").innerHTML = "段落已修改。";
+document.getElementById("demo").innerHTML = person.fullName;
+</script>
+
+<!--4.使用 console.log() 写入到浏览器的控制台。按F12可以查看调试-->
+<script>
+a = 5;
+b = 6;
+c = a + b;
+console.log(c);
+</script>
+
+<!--JS语法-->
+
+
+</body>
+</html>

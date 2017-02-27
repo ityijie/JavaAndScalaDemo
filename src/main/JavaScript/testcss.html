@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--样式定义-->
+    <!--div      定义一个总样式div-->
+    <!--div#div2 定义一个子样式div-->
+    <style>
+
+div
+{
+	width:100px;
+	height:75px;
+	background-color:red;
+	border:1px solid black;
+}
+#div2
+{
+	transform:rotate(30deg);
+	-ms-transform:rotate(30deg); /* IE 9 */
+	-webkit-transform:rotate(30deg); /* Safari and Chrome */
+}
+#div3
+{
+	border:2px solid #a1a1a1;
+	padding:10px 40px;
+	background:#dddddd;
+	width:300px;
+	border-radius:25px;
+}
+
+#div4
+{
+	width:300px;
+	height:100px;
+	background-color:yellow;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+
+
+    </style>
+
+    <!--script的方法定义-->
+    <script>
+function myFunction()
+{
+    document.getElementById("demo").innerHTML="我的第一个 JavaScript 函数";
+}
+
+    </script>
+</head>
+<body>
+<div>你好。这是一个 DIV 元素。</div>
+
+
+<!--边框属性
+border-radius : 圆角
+box-shadow  :阴影
+border-image-->
+<!--总样式-->
+<div id="div2">你好。这是一个 DIV 元素。</div>
+<!--圆角边框-->
+<div id="div3">border-radius 属性允许您为元素添加圆角边框！</div>
+<!--阴影-->
+<div id="div4"></div>
+<!--图片-->
+
+<!--1. html 会自动加载body中的Script脚本-->
+<script>
+alert("我的第一个 JavaScript");
+</script>
+<!--2. 利用button调用head的js脚本-->
+<button type="button" onclick="myFunction()">尝试一下</button>
+<!--3. 调用外部文件js-->
+<script src="/src/main/JavaScript/myScript.js"></script>
+</body>
+</html>
