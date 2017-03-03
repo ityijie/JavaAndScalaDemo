@@ -1,18 +1,21 @@
 package Sql
 
 import org.apache.spark.sql.{Row, SQLContext}
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
+import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   * Created by Administrator on 2016/12/6.
   *  textFlie -> table
-    {"name":"Michael","age":20}
-    {"name":"Andy", "age":30}
-    {"name":"Justin", "age":19}
+    Michael,20
+    Andy,30
+    Justin,19
+    定义列簇格式
+    testFile->map(p=>Row(p(1),p(2))) ->转换列簇->DataFrame->Table
+    可以是用Sql.Context.sql("Sql语句")
   */
 object Sqltest2 {
-  case class user( name:String,age:Int)
+
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf() //创建SparkConf对象
     conf.set("spark.executor.memory", "1g");
@@ -28,8 +31,11 @@ object Sqltest2 {
     val sqlContext = new SQLContext(ssc)
     //加载数据
     var dr =  ssc.textFile("d://sparktest/people2.txt")
-    val RowRDD = dr.map(_.split(",")).map(p => Row(p(0),p(1)))
     val schemaString = "name age"
+    /*  val schema = StructType(Array(
+      StructField("name", StringType, true),
+      StructField("age", StringType, true)
+    ))*/
     val schema = StructType(schemaString.split(" ").map(fieldName => StructField(fieldName, StringType, true)))
     val rowRDD = dr.map(_.split(",")).map(p => Row(p(0), p(1)))
     val df = sqlContext.createDataFrame(rowRDD, schema)
@@ -44,7 +50,6 @@ object Sqltest2 {
     df.groupBy("age").count().show()
     val teenagers = sqlContext.sql("SELECT name, age FROM user WHERE age >= 13 AND age <= 19")
     teenagers.map(t => "Name: " + t(0)).collect().foreach(println)
-
     println("-------")
     ssc.stop()
   }

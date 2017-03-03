@@ -9,6 +9,11 @@ import org.apache.spark.streaming.{Seconds, StreamingContext, Time}
   *
   */
 object Sql_Streaming {
+
+
+  /** Case class for converting RDD to DataFrame */
+  case class Record(word: String)
+
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf() //创建SparkConf对象
     conf.set("spark.executor.memory", "1g");
@@ -29,7 +34,9 @@ object Sql_Streaming {
 
     //调用foreachRDD方法，遍历DStream中的RDD
     words.foreachRDD((rdd: RDD[String], time: Time) => {
+
       // Get the singleton instance of SQLContext
+
       val sqlContext = SQLContextSingleton.getInstance(rdd.sparkContext)
       import sqlContext.implicits._
 
@@ -42,8 +49,8 @@ object Sql_Streaming {
       // Do word count on table using SQL and print it
       val wordCountsDataFrame =
       sqlContext.sql("select word, count(*) as total from words group by word")
-      println(s"========= $time =========")
       wordCountsDataFrame.show()
+
     })
     //开始工作
     ssc.start()
@@ -52,8 +59,7 @@ object Sql_Streaming {
   }
 
 }
-/** Case class for converting RDD to DataFrame */
-case class Record(word: String)
+
 
 object SQLContextSingleton {
 
