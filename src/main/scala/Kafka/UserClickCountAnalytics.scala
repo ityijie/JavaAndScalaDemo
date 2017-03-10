@@ -8,6 +8,11 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 /**
   * Created by Administrator on 2016/11/18.
   */
+/***
+  * 对接kafka ,有两种方式
+  * 1.基于Receiver的模式:createStream
+  * 2.直接模式(无Receiver)模式 :createDirectStream
+  */
 object UserClickCountAnalytics {
   def main(args: Array[String]): Unit = {
     var masterUrl = "local[2]"
