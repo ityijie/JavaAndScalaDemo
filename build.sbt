@@ -16,6 +16,8 @@ libraryDependencies += "org.apache.spark" % "spark-sql_2.10" % "1.6.2"
 
 libraryDependencies += "org.apache.spark" % "spark-streaming-kafka_2.10" % "1.6.2"
 
+libraryDependencies += "org.apache.spark" % "spark-hive_2.10" % "1.1.0"
+
 libraryDependencies += "com.google.code.gson" % "gson" % "2.7"
 
 //libraryDependencies += "io.netty" % "netty-all" % "5.0.0.Alpha2"
@@ -44,7 +46,10 @@ libraryDependencies += "javax.mail" % "mail" % "1.4.7"
 // https://mvnrepository.com/artifact/dom4j/dom4j
 libraryDependencies += "dom4j" % "dom4j" % "1.6.1"
 
+// https://mvnrepository.com/artifact/org.jblas/jblas
+libraryDependencies += "org.jblas" % "jblas" % "1.2.4"
 
+libraryDependencies += "org.mongodb" % "mongo-java-driver" % "3.4.2"
 /*
 // https://mvnrepository.com/artifact/org.apache.flume/flume-ng-core
 libraryDependencies += "org.apache.flume" % "flume-ng-core" % "1.5.0"
