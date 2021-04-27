@@ -20,7 +20,7 @@ public class Run {
     Statement st  = null;
     @Before
     public void init() throws ClassNotFoundException, SQLException{
-        //1、加载连接器(驱动)  Driver
+        //1、加载连接器(驱动)  Driver d
         Class.forName("com.mysql.jdbc.Driver");
         //用类反射加载，更灵活
 
